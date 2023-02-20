@@ -64,3 +64,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run prettier`
+Prettier is an opinionated code formatter. 
+It removes all original styling* and ensures that all outputted code conforms to a consistent style.
+https://prettier.io/
+
