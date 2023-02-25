@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('texts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('author_id')->constrained();
+            $table->foreignId('theme_id')->constrained();
+            $table->string('title');
+            $table->year('year_published')->nullable();
+            $table->date('date_registered');
+            $table->string('language')->nullable();
+            $table->string('keywords')->nullable();
+            $table->string('file_path');
             $table->timestamps();
         });
     }
