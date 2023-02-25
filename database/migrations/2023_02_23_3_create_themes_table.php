@@ -27,12 +27,13 @@ return new class extends Migration
     }
 
     /**
-     * Set up Eloquent one-to-many relationship.
-     * One theme can be shared by many texts.
+     * Set up Eloquent many-to-many relationship.
+     * Many themes can be shared by many texts.
      */
 
-    public function texts(): HasMany
+    public function texts(): BelongsToMany
     {
-        return $this->hasMany(Text::class); 
+        return $this->belongsToMany(Text::class); 
     }
+    
 };
