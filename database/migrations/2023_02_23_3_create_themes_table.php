@@ -25,4 +25,14 @@ return new class extends Migration
     {
         Schema::dropIfExists('themes');
     }
+
+    /**
+     * Set up Eloquent one-to-many relationship.
+     * One theme can be shared by many texts.
+     */
+
+    public function texts(): HasMany
+    {
+        return $this->hasMany(Text::class); 
+    }
 };

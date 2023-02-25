@@ -29,4 +29,25 @@ return new class extends Migration
     {
         Schema::dropIfExists('authors');
     }
+
+    /**
+     * Set up Eloquent many-to-many relationship.
+     * Many authors can be shared by many texts.
+     */
+
+    public function texts(): BelongsToMany
+    {
+        return $this->belongsToMany(Text::class); 
+    }
+
+    /**
+     * Set up Eloquent many-to-one relationship.
+     * Many authors can be shared by one institution.
+     */
+
+    public function institution(): BelongsTo
+    {
+        return $this->belongsTo(Institution::class); 
+    }
+
 };

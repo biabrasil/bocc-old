@@ -26,4 +26,14 @@ return new class extends Migration
     {
         Schema::dropIfExists('institutions');
     }
+
+    /**
+     * Set up Eloquent one-to-many relationship.
+     * One institution can be shared by many authors.
+     */
+
+    public function authors(): HasMany
+    {
+        return $this->hasMany(Author::class); 
+    }
 };
